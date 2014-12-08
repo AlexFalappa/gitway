@@ -23,6 +23,26 @@ public class App {
         CmdLineParser clp = new CmdLineParser(cla);
         try {
             clp.parseArgument(args);
+            if (cla.verbose) {
+                logger.info("Verbose mode on");
+            }
+            logger.info("Operation: {}", cla.operation);
+            switch (cla.operation) {
+                case CREATE:
+                    logger.debug("Creating...");
+                    break;
+                case DELETE:
+                    logger.debug("Deleting...");
+                    break;
+                case LIST:
+                    logger.debug("Listing...");
+                    break;
+                case MODIFY:
+                    logger.debug("Modifying...");
+                    break;
+                default:
+                    throw new AssertionError();
+            }
         } catch (CmdLineException ex) {
             System.err.println(ex.getMessage());
             System.out.print("Usage:\n\twayApp ");
