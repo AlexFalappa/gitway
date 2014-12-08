@@ -44,4 +44,10 @@ public class WayPoint {
     public void setLon(double lon) {
         this.lon = lon;
     }
+
+    @Override
+    public String toString() {
+        return "WayPoint{" + "name=" + name + ", lat=" + lat + ", lon=" + lon + '}';
+    }
+
 }

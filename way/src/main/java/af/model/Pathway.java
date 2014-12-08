@@ -27,4 +27,10 @@ public class Pathway {
     public void clear() {
         waypoints.clear();
     }
+
+    @Override
+    public String toString() {
+        return "Pathway{" + "waypoints=" + waypoints + '}';
+    }
+
 }

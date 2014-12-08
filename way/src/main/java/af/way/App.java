@@ -1,7 +1,8 @@
 package af.way;
 
+import af.algorithms.ShortRouteCalculator;
 import af.model.Pathway;
-import af.model.WayPoint;
+import java.util.Properties;
 import org.kohsuke.args4j.CmdLineException;
 import org.kohsuke.args4j.CmdLineParser;
 import org.slf4j.Logger;
@@ -32,9 +33,13 @@ public class App {
             switch (cla.operation) {
                 case CREATE:
                     logger.debug("Creating...");
-                    Pathway pw = new Pathway();
-                    pw.addWaypoint(new WayPoint("first", 10, 20));
-                    pw.addWaypoint(new WayPoint("second", 11, 21));
+                    Properties cprops = new Properties();
+                    cprops.setProperty("noToll", "true");
+                    ShortRouteCalculator src = new ShortRouteCalculator();
+                    src.setCalcOptions(cprops);
+                    Pathway pathway = new Pathway();
+                    Pathway route = src.calcRoute(pathway);
+                    System.out.println(route);
                     break;
                 case DELETE:
                     logger.debug("Deleting...");
