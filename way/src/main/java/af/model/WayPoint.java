@@ -1,4 +1,4 @@
-package model;
+package af.model;
 
 /**
  * Waypoint POJO.
