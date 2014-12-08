@@ -27,7 +27,7 @@ public class App {
             System.err.println(ex.getMessage());
             System.out.print("Usage:\n\twayApp ");
             clp.printSingleLineUsage(System.out);
-            System.out.println("\n\n");
+            System.out.println("\nWhere:");
             clp.printUsage(System.out);
         }
         logger.info("App finished");

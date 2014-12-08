@@ -11,9 +11,12 @@ import org.kohsuke.args4j.Option;
  */
 public class CmdArgs {
 
-    @Option(name = "-o", aliases = "--operation", required = true)
+    @Option(name = "-o", aliases = "--operation", required = true, usage = "Operation to perform. Mandatory.")
     Operations operation = LIST;
 
-    @Option(name = "-w", aliases = "--workDir")
+    @Option(name = "-w", aliases = "--workDir", usage = "Working directory path.")
     File workingDir;
+
+    @Option(name = "-v", aliases = "--verbose", usage = "Print activity messages.")
+    boolean verbose = false;
 }
