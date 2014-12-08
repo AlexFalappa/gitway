@@ -1,5 +1,7 @@
 package af.way;
 
+import af.model.Pathway;
+import af.model.WayPoint;
 import org.kohsuke.args4j.CmdLineException;
 import org.kohsuke.args4j.CmdLineParser;
 import org.slf4j.Logger;
@@ -30,6 +32,9 @@ public class App {
             switch (cla.operation) {
                 case CREATE:
                     logger.debug("Creating...");
+                    Pathway pw = new Pathway();
+                    pw.addWaypoint(new WayPoint("first", 10, 20));
+                    pw.addWaypoint(new WayPoint("second", 11, 21));
                     break;
                 case DELETE:
                     logger.debug("Deleting...");

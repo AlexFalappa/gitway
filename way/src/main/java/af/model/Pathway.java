@@ -12,6 +12,10 @@ public class Pathway {
 
     List<WayPoint> waypoints = new ArrayList<>();
 
+    public List<WayPoint> getWaypoints() {
+        return waypoints;
+    }
+
     public void addWaypoint(WayPoint p) {
         waypoints.add(p);
     }
