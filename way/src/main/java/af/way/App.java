@@ -41,6 +41,12 @@ public class App {
                     break;
                 case LIST:
                     logger.debug("Listing...");
+                    Pathway pw2 = new Pathway();
+                    pw2.addWaypoint(new WayPoint("first", 10, 20));
+                    pw2.addWaypoint(new WayPoint("second", 11, 21));
+                    for (WayPoint wp : pw2.getWaypoints()) {
+                        System.out.println(String.format("%s: [%f ; %f]", wp.getName(), wp.getLat(), wp.getLon()));
+                    }
                     break;
                 case MODIFY:
                     logger.debug("Modifying...");
