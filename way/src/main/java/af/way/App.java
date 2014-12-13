@@ -29,6 +29,11 @@ public class App {
                 logger.info("Verbose mode on");
             }
             logger.info("Operation: {}", cla.operation);
+            if (cla.file.exists()) {
+                logger.warn("File {} exists.", cla.file);
+            } else {
+                logger.info("File: {}", cla.file);
+            }
             switch (cla.operation) {
                 case CREATE:
                     logger.debug("Creating...");
