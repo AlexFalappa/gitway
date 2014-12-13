@@ -15,7 +15,7 @@ import org.slf4j.LoggerFactory;
 public class App {
 
     private static final Logger logger = LoggerFactory.getLogger(App.class);
-    private static CmdArgs cla = new CmdArgs();
+    private static final CmdArgs cla = new CmdArgs();
 
     /**
      * @param args the command line arguments
