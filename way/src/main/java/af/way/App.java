@@ -55,6 +55,9 @@ public class App {
                     break;
                 case MODIFY:
                     logger.debug("Modifying...");
+                    Pathway pw3 = new Pathway();
+                    pw3.addWaypoint(new WayPoint("first", 10, 20));
+                    pw3.addWaypoint(new WayPoint("third", 12, 22));
                     break;
                 default:
                     throw new AssertionError();
