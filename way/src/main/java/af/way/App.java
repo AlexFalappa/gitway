@@ -23,6 +23,7 @@ public class App {
     public static void main(String[] args) {
         logger.info("App started");
         CmdLineParser clp = new CmdLineParser(cla);
+        // TODO inserire quelcosa qui
         try {
             clp.parseArgument(args);
             if (cla.verbose) {
@@ -69,6 +70,7 @@ public class App {
             System.out.println("\nWhere:");
             clp.printUsage(System.out);
         }
+        // TODO inserire qualcosaltro qui
         logger.info("App finished");
     }
 
