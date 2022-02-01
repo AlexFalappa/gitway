@@ -27,4 +27,8 @@ public class Pathway {
     public void clear() {
         waypoints.clear();
     }
+
+    public void shuffle() {
+        // TODO: implement waypoint shuffling
+    }
 }
