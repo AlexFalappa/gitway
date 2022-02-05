@@ -1,9 +1,3 @@
-gitway
-======
+# Replaced README
 
-Learning git ...
-
-Purpose
--------
-
-The purpose of this repository is to paractice with git and its versioning flow.
+This will wipe out the existing readme.
