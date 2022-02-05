@@ -1,9 +1,3 @@
-gitway
-======
+# New Readme
 
-Learning git ...
-
-Purpose
--------
-
-The purpose of this repository is to paractice with git and its versioning flow.
+This is a new shiny readme.
