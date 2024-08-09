@@ -1,9 +1,11 @@
 package af.way;
 
-import static af.way.Operations.LIST;
-import java.io.File;
 import org.kohsuke.args4j.Argument;
 import org.kohsuke.args4j.Option;
+
+import java.io.File;
+
+import static af.way.Operations.LIST;
 
 /**
  * Command line arguments.
@@ -17,6 +19,9 @@ public class CmdArgs {
 
     @Option(name = "-w", metaVar = "DIR", usage = "Working directory path.")
     File workingDir;
+
+    @Option(name = "-d", usage = "Dry run mode. Do not really execute commands.")
+    boolean dryRun = false;
 
     @Option(name = "-v", usage = "Print activity messages.")
     boolean verbose = false;

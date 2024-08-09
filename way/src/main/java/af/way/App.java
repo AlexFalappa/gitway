@@ -34,6 +34,9 @@ public class App {
             if (cla.verbose) {
                 logger.info("Verbose mode on");
             }
+            if (cla.dryRun) {
+                logger.info("Dry run mode on");
+            }
             logger.info("Operation: {}", cla.operation);
             if (cla.file.exists()) {
                 logger.warn("File {} exists.", cla.file);
@@ -66,7 +69,7 @@ public class App {
                     pw3.addWaypoint(new WayPoint("third", 12, 22));
                     break;
                 default:
-                    throw new AssertionError();
+                    throw new IllegalArgumentException("Unknown operation: " + cla.operation);
             }
         } catch (CmdLineException ex) {
             System.err.println(ex.getMessage());
