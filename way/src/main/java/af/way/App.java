@@ -2,10 +2,13 @@ package af.way;
 
 import af.model.Pathway;
 import af.model.WayPoint;
+
 import org.kohsuke.args4j.CmdLineException;
 import org.kohsuke.args4j.CmdLineParser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.ResourceBundle;
 
 /**
  * Entry point.
@@ -16,6 +19,7 @@ public class App {
 
     private static final Logger logger = LoggerFactory.getLogger(App.class);
     private static final CmdArgs cla = new CmdArgs();
+    private static final ResourceBundle rb = ResourceBundle.getBundle("af.way.message");
 
     /**
      * @param args the command line arguments
@@ -23,7 +27,8 @@ public class App {
     public static void main(String[] args) {
         logger.info("App started");
         CmdLineParser clp = new CmdLineParser(cla);
-        // TODO inserire quelcosa qui
+        // TODO inserire qualcosa qui
+        logger.info(rb.getString("very"));
         try {
             clp.parseArgument(args);
             if (cla.verbose) {
@@ -51,7 +56,7 @@ public class App {
                     pw2.addWaypoint(new WayPoint("first", 10, 20));
                     pw2.addWaypoint(new WayPoint("second", 11, 21));
                     for (WayPoint wp : pw2.getWaypoints()) {
-                        System.out.println(String.format("%s: [%f ; %f]", wp.getName(), wp.getLat(), wp.getLon()));
+                        System.out.printf("%s: [%f ; %f]%n", wp.getName(), wp.getLat(), wp.getLon());
                     }
                     break;
                 case MODIFY:
@@ -70,7 +75,7 @@ public class App {
             System.out.println("\nWhere:");
             clp.printUsage(System.out);
         }
-        // TODO inserire qualcosaltro qui
+        // TODO inserire qualcos'altro qui
         logger.info("App finished");
     }
 
