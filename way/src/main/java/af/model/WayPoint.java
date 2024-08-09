@@ -44,4 +44,9 @@ public class WayPoint {
     public void setLon(double lon) {
         this.lon = lon;
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s: [%f ; %f]%n", name, lat, lon);
+    }
 }

@@ -2,6 +2,7 @@ package af.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Pathway model POJO.
@@ -10,7 +11,12 @@ import java.util.List;
  */
 public class Pathway {
 
+    private final String name;
     List<WayPoint> waypoints = new ArrayList<>();
+
+    public Pathway(String name) {
+        this.name = name;
+    }
 
     public List<WayPoint> getWaypoints() {
         return waypoints;
@@ -30,5 +36,13 @@ public class Pathway {
 
     public void shuffle() {
         // TODO: implement waypoint shuffling
+    }
+
+    @Override
+    public String toString() {
+        return "Path" + name + ":\n" +
+               waypoints.stream()
+                       .map(WayPoint::toString)
+                       .collect(Collectors.joining());
     }
 }
