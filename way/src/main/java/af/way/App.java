@@ -27,7 +27,7 @@ public class App {
     public static void main(String[] args) {
         logger.info("App started");
         CmdLineParser clp = new CmdLineParser(cla);
-        // TODO inserire qualcosa qui
+        logger.info(rb.getString("some"));
         logger.info(rb.getString("very"));
         try {
             clp.parseArgument(args);
@@ -75,7 +75,7 @@ public class App {
             System.out.println("\nWhere:");
             clp.printUsage(System.out);
         }
-        // TODO inserire qualcos'altro qui
+        logger.info(rb.getString("another"));
         logger.info("App finished");
     }
 
