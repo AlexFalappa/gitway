@@ -46,7 +46,7 @@ public class App {
             switch (cla.operation) {
                 case CREATE:
                     logger.debug("Creating...");
-                    Pathway pw = new Pathway("some path");
+                    Pathway pw = new Pathway("close path");
                     pw.addWaypoint(new WayPoint("first", 10, 20));
                     pw.addWaypoint(new WayPoint("second", 11, 21));
                     break;
@@ -55,12 +55,10 @@ public class App {
                     break;
                 case LIST:
                     logger.debug("Listing...");
-                    Pathway pw2 = new Pathway("some other path");
+                    Pathway pw2 = new Pathway("distant path");
                     pw2.addWaypoint(new WayPoint("first", 10, 20));
                     pw2.addWaypoint(new WayPoint("second", 11, 21));
-                    for (WayPoint wp : pw2.getWaypoints()) {
-                        System.out.printf("%s: [%f ; %f]%n", wp.getName(), wp.getLat(), wp.getLon());
-                    }
+                    System.out.println(pw2);
                     break;
                 case MODIFY:
                     logger.debug("Modifying...");
