@@ -25,7 +25,7 @@ public class App {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        logger.info("App started");
+        logger.info(rb.getString("app.started"));
         CmdLineParser clp = new CmdLineParser(cla);
         logger.info(rb.getString("some"));
         logger.info(rb.getString("very"));
@@ -45,16 +45,16 @@ public class App {
             }
             switch (cla.operation) {
                 case CREATE:
-                    logger.debug("Creating...");
+                    logger.debug(rb.getString("app.operation.create"));
                     Pathway pw = new Pathway("close path");
                     pw.addWaypoint(new WayPoint("first", 10, 20));
                     pw.addWaypoint(new WayPoint("second", 11, 21));
                     break;
                 case DELETE:
-                    logger.debug("Deleting...");
+                    logger.debug(rb.getString("app.operation.delete"));
                     break;
                 case LIST:
-                    logger.debug("Listing...");
+                    logger.debug(rb.getString("app.operation.list"));
                     Pathway pw2 = new Pathway("distant path");
                     pw2.addWaypoint(new WayPoint("first", 10, 20));
                     pw2.addWaypoint(new WayPoint("second", 11, 21));
